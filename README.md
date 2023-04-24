@@ -3,15 +3,6 @@
 
 [![Build](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml/badge.svg)](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml)
 
-## Deveploer requirements - WIP
-* [Go](https://gist.github.com/tosin2013/d4f4420231a96aed2116efb4d6b151a0)
-* git
-
-```
-git clone https://github.com/tosin2013/openshift-network-validator.git
-cd openshift-network-validator
-```
-
 ## Running on Linux
 ```bash 
 curl -OL https://github.com/tosin2013/openshift-network-validator/releases/download/v0.0.1/openshift-network-validator-v0.0.1-linux-amd64.tar.gz
@@ -43,6 +34,15 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tosin2013/openshift-ne
 .\openshift-network-validator-v0.0.1-windows-amd64.exe  dns  --config  sample.yaml --cluster-name mycluster --base-domain example.com
 .\openshift-network-validator-v0.0.1-windows-amd64.exe  url-access  --config sample.yaml
 .\openshift-network-validator-v0.0.1-windows-amd64.exe  test-networking   --config  sample.yaml
+```
+
+## Deveploer requirements
+* [Go](https://gist.github.com/tosin2013/d4f4420231a96aed2116efb4d6b151a0)
+* git
+
+```
+git clone https://github.com/tosin2013/openshift-network-validator.git
+cd openshift-network-validator
 ```
 
 ## Development commands
