@@ -38,7 +38,7 @@ build-windows: pre-build
 	GOOS=windows GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-windows-amd64.exe
 
 .PHONY: build build-all
-build-all: build-linux build-osx
+build-all: build-linux build-osx build-windows
 
 .PHONY: package-linux
 package-linux:
