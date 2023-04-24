@@ -6,6 +6,7 @@ OpenShift Network Validator can be used to validate the DNS configuration, URL a
 To contribute to the development of OpenShift Network Validator, you need to have Go and Git installed on your system. You can clone the repository and run the development commands to build and test OpenShift Network Validator.
 
 [![Build](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml/badge.svg)](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml)
+[![Release](https://github.com/tosin2013/openshift-network-validator/actions/workflows/release.yml/badge.svg)](https://github.com/tosin2013/openshift-network-validator/actions/workflows/release.yml)
 
 ## Running on Linux
 ```bash 
