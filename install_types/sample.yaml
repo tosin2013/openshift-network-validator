@@ -1,0 +1,100 @@
+dns:
+  - port: Kubernetes API
+    record: api.<cluster_name>.<base_domain>.
+  - port: Routes
+    record: "test.apps.<cluster_name>.<base_domain>."
+
+# Based On:  https://access.redhat.com/solutions/2998411
+# optional: add  Internal git repository hostnames to list below
+url_access:
+  - registry.redhat.io
+  - registry.connect.redhat.com
+  - quay.io
+  - github.com
+  - mirror.openshift.com
+  - console.redhat.com
+  - registry.access.redhat.com 
+  - storage.googleapis.com/openshift-release
+  - sso.redhat.com
+  - docker.io
+  - docker.com
+  - hub.docker.com
+  - index.docker.io
+  - github.com
+  - gitlab.com
+
+networking:
+  internet_access: True
+  test_dhcp: true
+  subnet_conflicts:
+   - 172.30.0.0/16
+   - 192.168.1.0/24
+   #- 10.128.0.0/14​
+
+install_type: assisted_installer
+
+links: 
+ - https://docs.openshift.com/container-platform/4.12/installing/installing_vsphere/installing-vsphere-installer-provisioned.html
+
+
+#ingress_load_balancer:
+#  port:
+#  - number: 443
+#    machines:
+#    - internal
+#    - external
+#    usage: HTTPS traffic
+#  - number: 80
+#    machines:
+#    - internal
+#    - external
+#    usage: HTTP traffic
+
+
+#ports_to_open:
+#  - protocol: TCP
+#    port: 2379-2380
+#    description: etcd server, peer, and metrics ports
+#  - protocol: TCP
+#    port: 6443
+#    description: Kubernetes API
+#  - protocol: TCP
+#    port: 9000-9999
+#    description: Host level services, including the node exporter on ports 9100-9101 and the Cluster Version Operator on port 9099.
+#  - protocol: TCP
+#    port: 10249-10259
+#    description: The default ports that Kubernetes reserves
+#  - protocol: TCP
+#    port: 10256
+#    description: openshift-sdn
+#  - protocol: TCP
+#    port: 30000-32767
+#    description: Kubernetes NodePort
+#  - protocol: UDP
+#    port: 4789
+#    description: VXLAN and GENEVE
+#  - protocol: UDP
+#    port: 6081
+#    description: VXLAN and GENEVE
+#  - protocol: UDP
+#    port: 9000-9999
+#    description: Host level services, including the node exporter on ports 9100-9101
+#  - protocol: UDP
+#    port: 30000-32767
+#    description: Kubernetes NodePort
+#  - protocol: ICMP
+#   port: N/A
+
+#ssh_and_bootstrap:
+#  - port: 22
+#    machines:
+#    - all
+#    description: SSH
+#  - port: 6443
+#    machines:
+#    - bootstrap and control plane
+#    description: Kubernetes API server
+#  - port: 22623
+#    machines:
+#    - bootstrap and control plane
+#    description: Machine Config server
