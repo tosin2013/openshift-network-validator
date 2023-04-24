@@ -31,6 +31,12 @@ build-osx: pre-build
 	@echo "Building OSX binary..."
 	GOOS=darwin GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-amd64
 
+
+.PHONY: build-windows
+build-windows: pre-build
+	@echo "Building Windows binary..."
+	GOOS=windows GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-windows-amd64.exe
+
 .PHONY: build build-all
 build-all: build-linux build-osx
 

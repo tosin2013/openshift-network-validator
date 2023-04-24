@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-linux:
     name: Build on push
     runs-on: ubuntu-latest
     steps:
@@ -19,3 +19,15 @@ jobs:
       - name: Build project
         run: |
           make build-in-docker
+
+  build-windows:
+    name: Build on Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Build project
+        run: |
+          choco install make
+          make build-windows
