@@ -30,6 +30,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body_path: build/CHANGELOG.md
-          files: build/ansiblesafe-*.tar.gz
+          files: build/openshift-network-validator-*.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
