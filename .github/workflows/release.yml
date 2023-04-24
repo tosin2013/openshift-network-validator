@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Build project
+        run: |
+          make all
+
+      - name: Generate Changelog
+        run: |
+          VERSION=$(hack/version.sh)
+          hack/changelog.sh $VERSION > build/CHANGELOG.md
+          echo "VERSION=$VERSION"
+          ls -R build
+          cat build/CHANGELOG.md
+          ls -lath .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: build/CHANGELOG.md
+          files: build/ansiblesafe-*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
