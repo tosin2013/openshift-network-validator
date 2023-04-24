@@ -3,8 +3,6 @@
 OpenShift Network Validator tool can be used to validate the networking configuration of an OpenShift cluster before deploying it. 
 OpenShift Network Validator can be used to validate the DNS configuration, URL access, and network connectivity of an OpenShift cluster. OpenShift Network Validator can be run using the command-line interface, and it can also be used as a library in a Go program. OpenShift Network Validator is available for Linux, macOS, and Windows operating systems.
 
-To contribute to the development of OpenShift Network Validator, you need to have Go and Git installed on your system. You can clone the repository and run the development commands to build and test OpenShift Network Validator.
-
 [![Build](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml/badge.svg)](https://github.com/tosin2013/openshift-network-validator/actions/workflows/build.yml)
 [![Release](https://github.com/tosin2013/openshift-network-validator/actions/workflows/release.yml/badge.svg)](https://github.com/tosin2013/openshift-network-validator/actions/workflows/release.yml)
 
@@ -56,3 +54,6 @@ go run main.go dns --config install_types/sample.yaml --cluster-name mycluster -
 go run main.go url-access --config install_types/sample.yaml
 go run main.go test-networking --config install_types/sample.yaml
 ```
+
+## Contributing
+To contribute to the development of OpenShift Network Validator, you need to have Go and Git installed on your system. You can clone the repository and run the development commands to build and test OpenShift Network Validator.
