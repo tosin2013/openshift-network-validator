@@ -30,6 +30,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body_path: build/CHANGELOG.md
-          files: build/openshift-network-validator-*.tar.gz
+          files: 
+            - build/openshift-network-validator-*.tar.gz
+            - build/openshift-network-validator-*.exe
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

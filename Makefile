@@ -35,7 +35,7 @@ build-osx: pre-build
 .PHONY: build-windows
 build-windows: pre-build
 	@echo "Building Windows binary..."
-	GOOS=windows GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-windows-amd64.exe
+	GOOS=windows GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-windows-amd64.exe
 
 .PHONY: build build-all
 build-all: build-linux build-osx build-windows
