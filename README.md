@@ -12,7 +12,40 @@ git clone https://github.com/tosin2013/openshift-network-validator.git
 cd openshift-network-validator
 ```
 
-### run app
+## Running on Linux
+```bash 
+curl -OL https://github.com/tosin2013/openshift-network-validator/releases/download/v0.0.1/openshift-network-validator-v0.0.1-linux-amd64.tar.gz
+curl -OL https://raw.githubusercontent.com/tosin2013/openshift-network-validator/main/install_types/sample.yaml
+tar -xvf openshift-network-validator-v0.0.1-linux-amd64.tar.gz
+chmod +x openshift-network-validator-linux-amd64
+sudo mv openshift-network-validator-linux-amd64 /usr/local/bin/openshift-network-validator
+openshift-network-validator dns  --config  sample.yaml --cluster-name mycluster --base-domain example.com
+openshift-network-validator url-access  --config sample.yaml
+openshift-network-validator test-networking  --config  sample.yaml
+```
+
+## Running on MacOS
+```bash 
+curl -OL https://github.com/tosin2013/openshift-network-validator/releases/download/v0.0.1/openshift-network-validator-v0.0.1-darwin-amd64.tar.gz
+curl -OL https://raw.githubusercontent.com/tosin2013/openshift-network-validator/main/install_types/sample.yaml
+tar -xvf openshift-network-validator-v0.0.1-darwin-amd64.tar.gz
+chmod +x openshift-network-validator-v0.0.1-darwin-amd64
+sudo mv openshift-network-validator-v0.0.1-darwin-amd64 /usr/local/bin/openshift-network-validator
+openshift-network-validator dns  --config  sample.yaml --cluster-name mycluster --base-domain example.com
+openshift-network-validator url-access  --config sample.yaml
+openshift-network-validator test-networking  --config  sample.yaml
+```
+
+## Running on Windows
+```powershell 
+Invoke-WebRequest -Uri "https://github.com/tosin2013/openshift-network-validator/releases/download/v0.0.1/openshift-network-validator-v0.0.1-windows-amd64.exe" -OutFile "openshift-network-validator-v0.0.1-windows-amd64.exe"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tosin2013/openshift-network-validator/main/install_types/sample.yaml" -OutFile "sample.yaml"
+.\openshift-network-validator-v0.0.1-windows-amd64.exe  dns  --config  sample.yaml --cluster-name mycluster --base-domain example.com
+.\openshift-network-validator-v0.0.1-windows-amd64.exe  url-access  --config sample.yaml
+.\openshift-network-validator-v0.0.1-windows-amd64.exe  test-networking   --config  sample.yaml
+```
+
+## Development commands
 ``` 
 go run main.go dns --config install_types/sample.yaml --cluster-name mycluster --base-domain example.com
 go run main.go url-access --config install_types/sample.yaml
