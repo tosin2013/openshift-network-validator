@@ -7,6 +7,7 @@ dns:
 # Based On:  https://access.redhat.com/solutions/2998411
 # optional: add  Internal git repository hostnames to list below
 url_access:
+  - api.openshift.com
   - registry.redhat.io
   - registry.connect.redhat.com
   - quay.io
